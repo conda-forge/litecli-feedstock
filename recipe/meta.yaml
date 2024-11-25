@@ -1,13 +1,13 @@
 {% set name = "litecli" %}
-{% set version = "1.12.3" %}
+{% set version = "1.13.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dd707c1bc04047aa6dba1916d204be47003aa383cf638bbe0f1d70bc6571d681
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ac374929a5b3d914a9f47e0a7f4a838a7e1f6e963b4893cd7d67a1e2a3ac4762
 
 build:
   number: 0
