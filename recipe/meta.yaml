@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: dd707c1bc04047aa6dba1916d204be47003aa383cf638bbe0f1d70bc6571d681
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - litecli = litecli.main:cli
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - click >=4.1
     - pygments >=1.6
@@ -27,9 +27,11 @@ requirements:
     - sqlparse
     - configobj >=5.0.5
     - cli_helpers >=2.2.1
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - litecli
     - litecli.packages
