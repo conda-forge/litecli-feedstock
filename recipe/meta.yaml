@@ -10,7 +10,7 @@ source:
   sha256: 9b5e8a251eef8587448205b092568497ad332a541e29527f15e16e03c39bc9e7
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - litecli = litecli.main:cli
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - click >=4.1
     - pygments >=1.6
@@ -27,9 +27,11 @@ requirements:
     - sqlparse
     - configobj >=5.0.5
     - cli_helpers >=2.2.1
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - litecli
     - litecli.packages
