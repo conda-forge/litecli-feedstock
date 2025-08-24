@@ -18,16 +18,17 @@ build:
 
 requirements:
   host:
-    - pip
     - python {{ python_min }}
+    - pip
   run:
-    - click >=4.1
-    - pygments >=1.6
-    - prompt_toolkit >=3.0.3,<4.0.0
-    - sqlparse
-    - configobj >=5.0.5
-    - cli_helpers >=2.2.1
     - python >={{ python_min }}
+    - cli_helpers >=2.2.1
+    - click >=4.1
+    - configobj >=5.0.5
+    - prompt_toolkit >=3.0.3,<4.0.0
+    - pygments >=1.6
+    - sqlparse >=0.4.4
+    - llm >=0.25.0
 
 test:
   requires:
