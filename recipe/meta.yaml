@@ -1,5 +1,5 @@
 {% set name = "litecli" %}
-{% set version = "1.15.0" %}
+{% set version = "1.16.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3285997f57b2d72dc70e9856cb302cddd8de07b0cebf5c90a60ecd20a053cd79
+  sha256: bdef4f02a9b18f3bafcae080fcddff8031eabd7d0c0cefa0ac157adbc384e220
 
 build:
   number: 1
@@ -18,16 +18,17 @@ build:
 
 requirements:
   host:
-    - pip
     - python {{ python_min }}
+    - pip
   run:
-    - click >=4.1
-    - pygments >=1.6
-    - prompt_toolkit >=3.0.3,<4.0.0
-    - sqlparse
-    - configobj >=5.0.5
-    - cli_helpers >=2.2.1
     - python >={{ python_min }}
+    - cli_helpers >=2.2.1
+    - click >=4.1
+    - configobj >=5.0.5
+    - prompt_toolkit >=3.0.3,<4.0.0
+    - pygments >=1.6
+    - sqlparse >=0.4.4
+    - llm >=0.25.0
 
 test:
   requires:
