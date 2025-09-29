@@ -1,5 +1,5 @@
 {% set name = "litecli" %}
-{% set version = "1.16.0" %}
+{% set version = "1.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bdef4f02a9b18f3bafcae080fcddff8031eabd7d0c0cefa0ac157adbc384e220
+  sha256: 93cfefa9765f4bdcaaf6d6c9b717b4d5720a8893c92c8eb99debf04cb371fcb7
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - litecli = litecli.main:cli
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
